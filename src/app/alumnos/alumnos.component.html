@@ -1,0 +1,24 @@
+<table class="table table-bordered text-center">
+  <thead>
+    <tr>
+      <th scope="col">Documento de identidad</th>
+      <th scope="col">Nombres </th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Cantidad de cursos</th>
+      <th scope="col">Promedio</th>
+      <th scope="col">Condición</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let alumno of listaAlumno">
+      <td>{{alumno.dni}}</td>
+      <td>{{alumno.nombre | titlecase}} </td>
+      <td>{{alumno.apellidos | uppercase}}</td>
+      <td>{{alumno.edad | date}}</td>
+      <td>{{alumno.cantidadCursos}}</td>
+      <td [ngClass]="alumno.promedio>12?'aprobado':'desaprobado'">{{alumno.promedio}}</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
